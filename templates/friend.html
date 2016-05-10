@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Friends</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+  <div class="col-md-12">
+    <div class="well">
+    {% for i in user %}
+      <p><b>ID:</b> {{ i['id'] }}</p>
+      <p><b>First Name:</b> {{ i['first_name'] }}</p>
+      <p><b>Last Name:</b> {{ i['last_name'] }}</p>
+      <p><b>Occupation:</b> {{ i['occupation'] }}</p>
+      <hr>
+    {% endfor %}
+    </div>
+    <form class="col-md-3" action='/'>
+          <button type="submit" class="btn btn-success">Back</button>
+    </form>
+  </div>
+</body>
+</html>

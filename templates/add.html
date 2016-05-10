@@ -1,0 +1,27 @@
+ <html>
+<head>
+  <title>Friends</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+ <div class="col-md-12">
+    <h2>Add a Friend</h2>
+    <form action='/create' method='POST'>
+    <fieldset class="form-group">
+      <label for="first_name">First Name:<input class="form-control" type="text" name="first_name" id="first_name"></label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="last_name">Last Name:<input class="form-control" type="text" name="last_name" id="last_name"></label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="occupation">Occupation:<input class="form-control" type="text" name="occupation" id="occupation"></label>
+    </fieldset>
+    <fieldset class="form-group">
+      <input class="btn btn-success" type="submit" value="Add">
+    </fieldset>
+    </form>
+  </div>
+</body>
+</html>

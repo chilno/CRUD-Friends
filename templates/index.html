@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Friends</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+  <h1>These are all my friends!</h1>
+  {% for i in friends %}
+  <div class="col-md-3">
+    <div class="well">
+      <p><b>ID:</b> {{ i['id'] }}</p>
+      <p><b>First Name:</b> {{ i['first_name'] }}</p>
+      <p><b>Last Name:</b> {{ i['last_name'] }}</p>
+      <p><b>Occupation:</b> {{ i['occupation'] }}</p>
+      <hr>
+      <div class="row">
+        <form class="col-md-3" action="/show/{{ i['id'] }}">
+          <button type="submit" class="btn btn-success">Show</button>
+        </form>
+        <form  class="col-md-3" action="/edit/{{ i['id'] }}" method="GET">
+          <button type="submit" class="btn btn-warning">Edit</button>
+        </form>
+        <form class="col-md-3" action="/friends/{{ i['id'] }}/delete">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  <form class="col-md-3" action='/add'>
+          <button type="submit" class="btn btn-main">Add</button>
+  </form>
+</body>
+</html>
